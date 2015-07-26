@@ -3,17 +3,11 @@
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
 def multiples
-	numbers = (1...1000)
-	sum = 0
+  numbers = (1...1000)
+  sum = 0
 
-	numbers.each do |i|
-		if i % 15 == 0
-			sum += i
-		elsif i % 5 == 0
-			sum += i
-		elsif i % 3 == 0
-			sum += i 
-		end
-	end
-	sum
+  numbers.each do |num|
+    sum += num if num % 5 == 0 || num % 3 == 0
+  end
+  sum
 end
