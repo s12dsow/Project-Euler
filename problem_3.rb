@@ -3,19 +3,17 @@
 # # What is the largest prime factor of the number 600851475143 ?
 
 
-def prime_factors(num)
-	primes = []
-	factor = 2
+def largest_prime_factor(num)
+  factors = []
+  half_of_num = num / 2
 
-	while num >= factor
-		if num % factor == 0
-			primes << factor
-			num = num / factor
-		else
-			factor += 1
-		end
-	end
-	primes.max
+  (2..half_of_num).each do |factor|
+    if num % factor == 0
+      factors << factor
+      num = num / factor
+    end
+  end
+  factors.max
 end
 
-p prime_factors(600851475143)
+p largest_prime_factor(13195)
