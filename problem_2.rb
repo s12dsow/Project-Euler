@@ -6,9 +6,10 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 def fib 
-	arr = [0, 1]
-	1.upto(32) do |x| 
-		arr[-1] + arr[-2] <= 4_000_000 ? arr << arr[-1] + arr[-2] : arr
-	end
-	arr.select(&:even?).inject(:+)
+  arr = [0, 1]
+
+  while arr[-1] + arr[-2] <= 4_000_000
+    arr << arr[-1] + arr[-2]
+  end
+  arr.select(&:even?).inject(:+)
 end
