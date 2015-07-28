@@ -1,4 +1,3 @@
-require "byebug"
 def smallest_multiple
   num = 1
 
